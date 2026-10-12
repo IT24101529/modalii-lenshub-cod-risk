@@ -1,0 +1,27 @@
+THREE MINUTE DEMONSTRATION
+Group 2026-DS-11K
+
+Target: 3:00. Rehearse at roughly 110-120 words per minute with deliberate pauses for screen changes and adjust pauses after recording. The script is not a generated video.
+
+0:00-0:20 | Report problem framing
+Our stakeholder is MODALII LENSHUB. Returned deliveries waste fulfilment effort and create revenue leakage. Our primary lens is order-level return-risk prediction. The intended decision is which orders need additional confirmation before dispatch.
+
+0:20-0:43 | Notebook target distribution
+The supplied dataset contains 4,316 orders, including 592 returns, or 13.72 percent. Our dataset-preparing member explained that delivery and return reports were matched using Waybill Number. This replaces the provisional target proposed initially. We did not have the original exports to independently reproduce that merge.
+
+0:43-1:05 | Data dictionary and zero-COD table
+We removed waybill identifiers and unvalidated address-derived city text from the submission. Weight is constant. The route flag duplicates the two delivery-charge levels. We retained 206 zero-COD orders and added a zero indicator because their operational meaning is still unknown. Zero COD does not mean return.
+
+1:05-1:30 | Preprocessing code and fold diagram
+We used a fixed stratified 80/20 split. Five-fold cross-validation was confined to the training data. Numeric preprocessing and imbalance handling were fitted separately inside each fold. SMOTENC resampled primitive COD and categorical route; derived ratios and zero flags were reconstructed afterwards.
+
+1:30-1:55 | CV comparison table
+We compared a dummy baseline with logistic regression, a decision tree, a random forest, histogram gradient boosting, XGBoost, and a random forest with SMOTENC. Model selection used mean validation average precision, not test accuracy. The selected model was Random forest with SMOTENC. Its validation average precision was 0.208; differences from other leading models were small.
+
+1:55-2:30 | Holdout table and confusion matrix
+The review threshold, 0.5164, was chosen from training out-of-fold F1 and frozen before holdout evaluation. On 864 holdout orders, average precision was 0.245, ROC-AUC 0.585, precision 22.5 percent, recall 24.4 percent, and F1 0.234. The flag identified 29 returns, also flagged 100 successful orders, and missed 90 returns. High majority-class accuracy alone therefore does not demonstrate useful return detection.
+
+2:30-3:00 | Recommendation and AI declaration
+We recommend only a monitored manual-confirmation pilot, subject to source checks and actual stakeholder feedback. We do not recommend automatic rejection or claim financial savings. Future data should include dates, final delivery status, confirmation outcomes and responsibly handled customer history. Codex assistance is declared, and each member is responsible for understanding and checking the work.
+
+Before recording: replace the final segment with the actual stakeholder response if available; keep the total duration at three minutes. Do not claim feedback has arrived until it is included.

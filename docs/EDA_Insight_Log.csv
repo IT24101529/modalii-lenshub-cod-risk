@@ -1,0 +1,11 @@
+Check,Observation,Implication
+Rows and labels,4316 rows; 592 returns; 3724 successful/non-returned,Evaluate minority class and ranking; retain original prevalence
+Missing values,0 cells missing,No immediate imputation changes needed; training-fitted numeric safeguard retained
+Identifiers,4316 unique source waybills,Replace with sequential audit ID; exclude from predictors
+Repeated profiles,4153 duplicated nonidentifier rows in privacy-reduced dataset,Not proof of duplicated orders; retain and document low feature diversity
+Weight,One unique value,Exclude constant
+COD range,0 to 19980 LKR,No verified erroneous-outlier boundary; retain
+Zero COD,"206 orders, one returned",Meaning unknown; flag rather than relabel/remove
+Route and charge,375 maps to 0; 425 maps to 1,Use one route flag; geography requires client confirmation
+City text privacy,352 records contain digits; 118 exceed 40 characters,Exclude unvalidated field from submission and modelling
+Ratio,Charge/COD for positive COD; zero sentinel at COD=0,Recompute and document denominator special case

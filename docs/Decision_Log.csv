@@ -1,0 +1,10 @@
+Decision,Choice,Options considered,Reason and evidence
+Target definition,Return-report match on Waybill Number,Proposed collection-based target vs final return match,Member explanation confirmed by group; raw source and merge not independently checked
+Primary lens,Order return-risk ranking,"Segmentation, revenue regression",Coherent pre-dispatch manual confirmation decision
+Zero COD,Retain and flag,"Remove, call prepaid, label as failure",Meaning unknown; 205 nonreturns and one return; training-only sensitivity included
+Privacy,"Remove city, waybill and phone-derived fields",Clean noisy city values or publish raw text,Possible address fragments; avoid redistributing unvalidated location text
+Derived features,Recompute ratio and zero flag,Trust stored ratios or resample all derived fields,"Maintain deterministic feature consistency, including after SMOTENC"
+Validation,Five folds inside fixed training split,Choose winner on holdout,Separate selection from final assessment; retrospective independence limitation documented
+Model selection,Random forest with SMOTENC,Six alternative strategies,"Highest mean training CV average precision; small margin, no superiority claim"
+Operating threshold,0.5164077354760632,0.5 or cost-derived threshold,"Training OOF F1; no business cost data, provisional operating point"
+Recommendation,Monitored confirmation pilot only,"Automatic rejection, deployment, claims of savings",Low recall and many false positives; no causal or financial evidence

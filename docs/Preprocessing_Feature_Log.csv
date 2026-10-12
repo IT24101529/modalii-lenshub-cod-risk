@@ -1,0 +1,10 @@
+Feature or step,Action,Fitted where,Justification
+"Waybill, phone prefix, city",Remove,Fixed privacy rule,No identifiers or potential address fragments published
+"Weight, COD_Deviation",Remove,Fixed rule,Constant weight and full-data redundant deviation
+Delivery Charge,Do not use as separate predictor,Fixed rule,Retain binary route proxy and use charge to check ratio
+COD,Median impute and scale,Each training fold only,Numeric predictor; no arbitrary outlier removal
+Delivery_Charge_Ratio,Recompute; zero sentinel; impute and scale,Formula fixed; fitted numeric parameters within training,Avoid division by zero; derived information documented
+Route and zero flags,One-hot encode,Each training fold only,Binary categories; never interpolated
+SMOTENC,"Resample primitive COD and route, reconstruct ratio/zero",Each training fold only,Preserve binary route and deterministic relationships
+Class weights,Balanced or current-fold positive ratio,Each training fold only,Alternative to resampling
+Holdout,Transform and predict only,Never fitted or resampled,Model and threshold frozen before final assessment

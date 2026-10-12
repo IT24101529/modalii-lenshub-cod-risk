@@ -1,0 +1,39 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.matplotlib_cache/
+.pytest_cache/
+.coverage
+*.egg-info/
+
+# Private client data
+data/*.csv
+!data/data_dictionary.csv
+data/raw/
+data/private/
+
+# Row-level predictions, split membership and execution metadata
+results/Training_OOF_Scores.csv
+results/Selected_Model_Holdout_Scores.csv
+results/Split_Membership.csv
+results/Run_Summary.json
+results/Selection_Before_Holdout.json
+results/Confusion_Matrices/
+results/Classification_Reports/
+
+# Local settings and temporary files
+.env
+.env.*
+.vscode/
+.idea/
+tmp/
+temp/
+*.log
+*.tmp
+~$*
+*.zip
+.DS_Store
+Thumbs.db

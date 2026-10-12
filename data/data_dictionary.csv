@@ -1,0 +1,9 @@
+Field,Definition,Treatment
+Order_Record_ID,Integer sequential record number,Audit only; never a predictor
+Delivery Charge,Numeric delivery fee in LKR,375 or 425; used to check route and ratio
+Weight,Numeric recorded shipment weight,Constant; excluded
+COD,Numeric recorded COD amount in LKR,Retained; zero meaning unconfirmed
+Delivery_Charge_Ratio,Numeric charge divided by COD,Recomputed; zero sentinel when COD = 0
+Is_Outstation,Binary flag derived from route fee,0 lower charge; 1 higher charge; retained
+COD_Is_Zero,Binary indicator derived during execution,1 if COD = 0; retained
+Is_Returned,Binary target from reported delivery and return report match,1 return match; 0 successful/non-returned
