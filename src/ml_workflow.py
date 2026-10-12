@@ -1,12 +1,3 @@
-"""Reproducible COD risk study. Selection uses training folds, not holdout metrics.
-
-Run: python src/run_project.py --dataset /path/to/approved/dataset.csv
-The dataset-preparing member reports matching DeliveryOrdersReport.csv and
-ReturnOrdersReport.csv on Waybill Number: returns are 1, successful/non-returned
-deliveries are 0. This replaces the initial proposed collection-based target.
-Original exports and merge code are unavailable for independent verification.
-All 206 zero-COD orders are retained and flagged; their business meaning is unknown.
-"""
 from pathlib import Path
 import hashlib, json, platform, time, importlib.metadata
 import numpy as np
