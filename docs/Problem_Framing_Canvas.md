@@ -15,5 +15,3 @@ Output: ranking score and manual review flag.
 Success: identify returns within an agreed review workload, then measure intervention effects prospectively.
 
 Constraints: unknown zero-COD meaning, no cost data, timestamps or customer groups; limited predictors.
-
-Responsible use: no automatic rejection; real client feedback pending.
