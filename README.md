@@ -27,7 +27,6 @@ data/         Data dictionary and dataset instructions
 results/      Aggregate comparison tables and figures
 docs/         Decision logs, preprocessing notes and provenance
 reports/      Group report in PDF and editable Word formats
-demo/         Three-minute demonstration script
 ```
 
 ## Run locally
